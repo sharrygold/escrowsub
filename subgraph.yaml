@@ -1,0 +1,39 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Escrow
+    network: mainnet
+    source:
+      address: "0x0d67440946949FE293B45c52eFD8A9b3d51e2522"
+      abi: Escrow
+      startBlock: 7727682
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - MetaEvidence
+        - Payment
+        - HasToPayFee
+        - Evidence
+        - Dispute
+        - Ruling
+      abis:
+        - name: Escrow
+          file: ./abis/Escrow.json
+      eventHandlers:
+        - event: MetaEvidence(indexed uint256,string)
+          handler: handleMetaEvidence
+        - event: Payment(indexed uint256,uint256,address)
+          handler: handlePayment
+        - event: HasToPayFee(indexed uint256,uint8)
+          handler: handleHasToPayFee
+        - event: Evidence(indexed address,indexed uint256,indexed address,string)
+          handler: handleEvidence
+        - event: Dispute(indexed address,indexed uint256,uint256,uint256)
+          handler: handleDispute
+        - event: Ruling(indexed address,indexed uint256,uint256)
+          handler: handleRuling
+      file: ./src/escrow.ts

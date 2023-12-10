@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "Escrow": {
+      "address": "0x0d67440946949FE293B45c52eFD8A9b3d51e2522",
+      "startBlock": 7727682
+    }
+  }
+}

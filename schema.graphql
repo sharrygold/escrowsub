@@ -1,0 +1,59 @@
+type MetaEvidence @entity(immutable: true) {
+  id: Bytes!
+  _metaEvidenceID: BigInt! # uint256
+  _evidence: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Payment @entity(immutable: true) {
+  id: Bytes!
+  _transactionID: BigInt! # uint256
+  _amount: BigInt! # uint256
+  _party: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type HasToPayFee @entity(immutable: true) {
+  id: Bytes!
+  _transactionID: BigInt! # uint256
+  _party: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Evidence @entity(immutable: true) {
+  id: Bytes!
+  _arbitrator: Bytes! # address
+  _evidenceGroupID: BigInt! # uint256
+  _party: Bytes! # address
+  _evidence: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Dispute @entity(immutable: true) {
+  id: Bytes!
+  _arbitrator: Bytes! # address
+  _disputeID: BigInt! # uint256
+  _metaEvidenceID: BigInt! # uint256
+  _evidenceGroupID: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Ruling @entity(immutable: true) {
+  id: Bytes!
+  _arbitrator: Bytes! # address
+  _disputeID: BigInt! # uint256
+  _ruling: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
