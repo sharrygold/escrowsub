@@ -1,13 +1,13 @@
 {
-  "name": "test",
+  "name": "escrowsub",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ test",
-    "create-local": "graph create --node http://localhost:8020/ test",
-    "remove-local": "graph remove --node http://localhost:8020/ test",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 test",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ escrowsub",
+    "create-local": "graph create --node http://localhost:8020/ escrowsub",
+    "remove-local": "graph remove --node http://localhost:8020/ escrowsub",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 escrowsub",
     "test": "graph test"
   },
   "dependencies": {
